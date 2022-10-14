@@ -1,7 +1,62 @@
 body {
-    background-color: aquamarine;
+    background-color: pink;
 }
 
 ul {
     list-style: none;
 }
+
+h1 {
+    font-family: "Open Sans", sans-seri;
+    font-size: 60px;
+}
+
+.nav {
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Loto", sans-seri;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-family: "Roboto", sans-seri;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+p {
+    font-family: cursive;
+    font-size: 14px;
+}
+
+section {
+    margin-top: 43px;
+    margin-bottom: 40px;
+  }
+
+#redes {
+  color: black;
+  font-size: 1.50rem;
+  font-family: "Roboto Ital 100";
+  text-decoration: none;
+  font-weight: bold;
+  list-style: none;
+}
+
+#avion {
+  color: black;
+  font-size: 2rem;
+  font-family: "Roboto Ital 100";
+  text-decoration: none;
+  font-weight: bold;
+  list-style: none;
+}
+
+
+
