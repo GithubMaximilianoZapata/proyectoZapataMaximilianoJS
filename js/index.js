@@ -46,15 +46,16 @@ do {
     8-Bombones de Chocolate Negro
     9-Bombones de Chocolate Premiun
     10-No deseo comprar nada
-    `));
+    `));                                  
 
     if (menu == 10) {
     alert("Muchas Gracias Por Su Visita!!!");
     break; 
-    }
-
+    }               
+  
     else if (menu < 1 || menu > 10) {
-        alert("Elija una opcion correcta del menu");
+        alert(`Elija una opcion correcta del menu entre 1 y 9.
+        Presiona "Y" para continuar tu compra o "N" para Salir`);
     }
 
     else (menu >= 1 && menu <=9); {     
