@@ -20,7 +20,7 @@ const precioBombonChocolateNegro = 80;
 
 const precioBombonChocolatePremiun = 90;
 
-/*INICIAR VARIABLES PARA CICLO Y SWITCH*/
+/*INICIAR VARIABLES PARA CICLO, SWITCH y FUNCIONES*/
 
 let costoTotalCompra = 0;
 
@@ -32,195 +32,193 @@ let unidades;
 
 const descuentoPorDocena = 0.10;
 
-/*CICLO CON CONDICIONALES Y SWITCH PARA SIMULAR LA COMPRA DE PRODUCTOS*/
+let precioConDescuento;
+
+/*FUNCIONES*/
+
+function porKilos (cantidad, precio) {
+
+    cantidad = kg;
+
+    total =  costoTotalCompra += (cantidad * precio);
+
+    console.log("El total de su compra es de: $ ", total);
+}
+
+
+function descuento (precio) {
+
+    let descuento = (precio * descuentoPorDocena);
+
+    let precioConDescuento = (precio - descuento);
+
+    return precioConDescuento;    
+}
+
+
+function porUnidades (cantidad, precio) {
+    
+    cantidad = unidades;
+
+    if (unidades >= 12) {             
+        
+        total = costoTotalCompra += (cantidad * precioConDescuento);
+
+        console.log("El total de su compra es de: $ ", total);
+
+    } else {
+            total = costoTotalCompra += (cantidad * precio);
+
+            console.log("El total de su compra es de: $ ", total);
+    } 
+}
+
+function mensajeKg (producto, precio) {
+
+    kg = parseInt(prompt("De cuantos Kg quiere su torta?"));
+
+    const compra = `${producto} ${kg} Kilos  a  $ ${precio} el kilo`;
+
+    console.log(compra);  
+
+}
+
+function mensajeUnidades (producto, precio) {
+
+    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+    
+    precioConDescuento = descuento(precio);    
+
+    if (unidades < 12) {
+
+        const compra = `${producto} ${unidades} Unidades  a  $ ${precio} la unidad`;
+
+        console.log(compra); 
+    } 
+    
+    else {
+
+        const compra = `${producto} ${unidades} Unidades  a  $ ${precioConDescuento} la unidad a precio de descuento`;
+
+        console.log(compra);
+    }                  
+}
+
+
+/*CICLO DO WHILE CON CONDICIONALES, SWITCH Y FUNCIONES PARA SIMULAR LA COMPRA DE PRODUCTOS*/
 
 do {
+    /*MENU DE PRODUCTOS PARA COMPRAR O CONSULTAR*/
+
     const menu = parseInt(prompt(`Ingrese el número del articulo que desea comprar!!!: 
-    1-Torta para Evento
-    2-Torta para Agasajo
-    3-Torta para Postres
-    4-Alfajor Artesanal Chocolate Negro
-    5-Mini Alfajor de Chocolate Negro
-    6-Alfajor de chocolate Premiun
-    7-Mini Alfajor de Chocolate Premiun
-    8-Bombones de Chocolate Negro
-    9-Bombones de Chocolate Premiun
-    10-No deseo comprar nada
-    `));                                  
+    1- Torta para Evento
+    2- Torta para Agasajo
+    3- Torta para Postres
+    4- Alfajor Artesanal Chocolate Negro
+    5- Mini Alfajor de Chocolate Negro
+    6- Alfajor de chocolate Premiun
+    7- Mini Alfajor de Chocolate Premiun
+    8- Bombones de Chocolate Negro
+    9- Bombones de Chocolate Premiun
+    10- No deseo comprar nada
+    `));
+    
+    /*SI SOLO QUIERE CONSULTAR Y NO COMPRAR MARCANDO 10*/
 
     if (menu == 10) {
     alert("Muchas Gracias Por Su Visita!!!");
     break; 
-    }               
+    } 
+    
+    /* SI MARCA OPCION INCORRECTA (NO HEMOS VISTO TRATATIEMTO DE ERRORES) PREGUNTA SI DESEA COMPRAR*/
   
     else if (menu < 1 || menu > 10) {
         alert(`Elija una opcion correcta del menu entre 1 y 9.
-        Presiona "Y" para continuar tu compra o "N" para Salir`);
+        Presione "Y" para continuar su compra o "N" para Salir`);
     }
 
-    else (menu >= 1 && menu <=9); {     
+    /*SI ELIGE ALGUN PRODUCTO DEL MENU ENTRA AL CICLO DE COMPRAS*/
+
+    else (menu >= 1 && menu <=9); { 
+    
+    /*SWITCH CON CADA PRODCUTO Y SU CASUISTICA*/
 
     switch (menu) {
+
         case (1):
-                    kg = parseInt(prompt("De cuantos Kg quiere su torta?"));
+                                                    
+                    mensajeKg("Torta para Evento", precioTortaEvento);
 
-                    costoTotalCompra += (kg * precioTortaEvento);
-
-                    console.log(costoTotalCompra);
-                      
+                    porKilos(kg, precioTortaEvento);
+                                         
                     break;
         case (2):
-                    kg = parseInt(prompt("De cuantos Kg quiere su torta?"));
-
-                    costoTotalCompra += (kg * precioTortaAgasajo);
-
-                    console.log(costoTotalCompra);
-                          
+                    
+                    mensajeKg("Torta para Agasajos", precioTortaAgasajo);
+                    
+                    porKilos(kg, precioTortaAgasajo);
+                                              
                     break;
         case (3):
-                    kg = parseInt(prompt("De cuantos Kg quiere su torta?"));
-
-                    costoTotalCompra += (kg * precioTortaPostres);
-
-                    console.log(costoTotalCompra);
-                              
+                    
+                    mensajeKg("Torta para Postres", precioTortaPostres);
+                    
+                    porKilos(kg, precioTortaPostres);
+                                                  
                     break;
         case (4):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
-
-                    if (unidades >= 12) {
-
-                        let descuento = (precioAlfajorChocolateNegro * descuentoPorDocena);
-
-                        let precioFinal = (precioAlfajorChocolateNegro - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioAlfajorChocolateNegro);
-
-                            console.log(costoTotalCompra);
-                    } 
+                    mensajeUnidades("Alfajor Artesanal Chocolate Negro", precioAlfajorChocolateNegro);                                  
+                                     
+                    porUnidades(unidades, precioAlfajorChocolateNegro);                    
 
                     break;
         case (5):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+                    mensajeUnidades("Mini Alfajor de Chocolate Negro", precioMiniAlfajorChocolateNegro);
 
-                    if (unidades >= 12) {
-
-                        let descuento = (precioMiniAlfajorChocolateNegro * descuentoPorDocena);
-
-                        let precioFinal = (precioMiniAlfajorChocolateNegro - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioMiniAlfajorChocolateNegro);
-
-                            console.log(costoTotalCompra);
-                    }     
+                    porUnidades(unidades, precioMiniAlfajorChocolateNegro);
                                 
                     break;
         case (6):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+                    mensajeUnidades("Alfajor de Chocolate Premiun", precioAlfajorChocolatePremiun);
 
-                    if (unidades >= 12) {
-
-                        let descuento = (precioAlfajorChocolatePremiun * descuentoPorDocena);
-
-                        let precioFinal = (precioAlfajorChocolatePremiun - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioAlfajorChocolatePremiun);
-
-                            console.log(costoTotalCompra);
-                    }     
+                    porUnidades(unidades, precioAlfajorChocolatePremiun);
                                   
                     break;
         case (7):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+                    mensajeUnidades("Mini Alfajor de Chocolate Premiun", precioMiniAlfajorChocolatePremiun);
 
-                    if (unidades >= 12) {
-
-                        let descuento = (precioMiniAlfajorChocolatePremiun * descuentoPorDocena);
-
-                        let precioFinal = (precioMiniAlfajorChocolatePremiun - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioMiniAlfajorChocolatePremiun);
-
-                            console.log(costoTotalCompra);
-                    }     
+                    porUnidades(unidades, precioMiniAlfajorChocolatePremiun);
                                   
                     break;
         case (8):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+                    mensajeUnidades("Bombones de Chocolate Negro", precioBombonChocolateNegro);
 
-                    if (unidades >= 12) {
-
-                        let descuento = (precioBombonChocolateNegro * descuentoPorDocena);
-
-                        let precioFinal = (precioBombonChocolateNegro - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioBombonChocolateNegro);
-
-                            console.log(costoTotalCompra);
-                    }     
+                    porUnidades(unidades, precioBombonChocolateNegro);
                                   
                     break;
         case (9):
-                    unidades = parseInt(prompt("Cuantas unidades desea comprar?"));
+                    mensajeUnidades("Bombones de Chocolate Premiun", precioBombonChocolatePremiun);
 
-                    if (unidades >= 12) {
-
-                        let descuento = (precioBombonChocolatePremiun * descuentoPorDocena);
-
-                        let precioFinal = (precioBombonChocolatePremiun - descuento);
-
-                        costoTotalCompra += (unidades * precioFinal);
-
-                        console.log(costoTotalCompra);
-
-                    } else {
-                            costoTotalCompra += (unidades * precioBombonChocolatePremiun);
-
-                            console.log(costoTotalCompra);
-                    }     
+                    porUnidades(unidades, precioBombonChocolatePremiun);
                                   
                     break;
         default:
             break;
     };
 
+    /*REPREGUNTA AL USUARIO SI DESEA SEGUIR COMPRANDO O NO (CONTINUA CICLO O FINALIZA LA COMPRA)*/
+
     flag = prompt("¿Desea continuar comprando? Y/N");
         
     }
+
+    /*WHILE CON METODO STRING POR SI USURIO INGRESA Y O N MINUSCULA NO ROMPA EL CICLO*/
     
 } while (flag.toUpperCase() == "Y");
 
 
 
 
-
-
-    
 
         
 
