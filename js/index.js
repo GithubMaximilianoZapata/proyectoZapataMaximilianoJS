@@ -136,7 +136,7 @@ do {
     SI EL USUARIO INGRESA LA OPCION EN MINUSCULA
     (CONTINUA CICLO O FINALIZA LA COMPRA MOSTRANDO EL ARRAY CARRITO DE COMPRA)*/
     flag = prompt("¿Desea continuar comprando? Y/N");
-        if (flag.toLocaleUpperCase() == "N"){
+        if (flag.toUpperCase() == "N"){
             console.log(carritoCompra.join(`\n`));
         };
     };         
