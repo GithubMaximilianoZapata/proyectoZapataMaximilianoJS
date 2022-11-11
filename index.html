@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DO<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,117 +24,58 @@
                     <a class="active nav" href="#alfajores">Alfajores</a>
                   </li>
                 <li class="nav-item">
-                    <a class="active nav" href="#bombones">Bombones</a>
+                    <a class="active nav" href="#bom">Bombones</a>
                   </li>
                 <li class="nav-item">
                     <a class="active nav" href="#contacto">Contacto</a>
                   </li>
             </div>
           </div>
-          <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
+          <nav class="navbar navbar-dark bg-dark d-flex">
+            <div class="container-fluid">              
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <h3 class="carrito" id="ver-carrito">🛒</h3> 
+              </button>                         
             </div>
           </nav>
     </head>
     <section class="container">
-      <h2 id="tortas" class="text-center">TORTAS</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card" id="cardTorta">
-            <img src="./img/torta1-250x250.jpg" class="card-img-top" alt="torta atesanal para eventos">
-            <div class="card-body">
-              <h5 class="card-title">Torta para Eventos</h5>
-              <p class="card-text">Esta es una torta cubierta por diferentes cremas para eventos de alta concurrencia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardTorta">
-            <img src="./img/torta2-250x250.jpeg" class="card-img-top" alt="torta artesanal para eventos">
-            <div class="card-body">
-              <h5 class="card-title">Torta para Agasajos</h5>
-              <p class="card-text">Esta es una torta cubierta con glace de azucar para eventos de mediana concurrencia.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardTorta">
-            <img src="./img/torta3-250x250.jpg" class="card-img-top" alt="torta artesanal para eventos">
-            <div class="card-body">
-              <h5 class="card-title">Torta para Postres</h5>
-              <p class="card-text">Esta es una torta con diferentes coberturas y tamaños para eventos de baja concurrencia.</p>
-            </div>
-          </div>
-        </div>        
-      </div>
+      <h2 id="tortas" class="text-center">TORTAS</h2>      
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="seccTortas">          
+        </div>      
     </section>
     <section class="container">
       <h2 id="alfajores" class="text-center">ALFAJORES</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card" id="cardAlBo">
-            <img src="./img/alfajores1-250x250.jpg" class="card-img-top" alt="Alfajores Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Alfajores Artesanales Chocolate Negro</h5>
-              <p class="card-text">Alfajores cubiertos por choclate negro rellenos con dulce de leche.</p>
-            </div>
+      <div class="row row-cols-1 row-cols-md-2 g-4 " id="seccAlfajores">                
+      </div>      
+    </section>
+    <section class="container">
+      <h2 id="bom" class="text-center">BOMBONES</h2>      
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="seccBombones">       
+      </div>
+    </section>    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content cuerpoCarrito">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">CARRITO</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardAlBo">
-            <img src="./img/alfajores2-250x250.jpg" class="card-img-top" alt="Alfajores Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Mini Alfajores de Chocolate Negro</h5>
-              <p class="card-text">Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.</p>
-            </div>
+          <div class="modal-body" id="modal-container">
+            ...
           </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardAlBo"  >
-            <img src="./img/alfajores3-250x250.jpg" class="card-img-top" alt="Alfajores Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Mini Alfjores de Chocolate a Eleccion Premiun</h5>
-              <p class="card-text">Mini Alfajores de chocolate negro o blanco con decoraciones a eleccion.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardAlBo">
-            <img src="./img/alfajores4-250x250.jpeg" class="card-img-top" alt="Alfajores Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Alfajores de Chocolate Negro o Blanco Premiun</h5>
-              <p class="card-text">Alfajores bañados en chocolate negro o blanco rellenos de dulce a eleccion.</p>
-            </div>
+          <div class="modal-footer">
+            <p class="total-carrito">Total: $<span id="total-carrito">0</span></p>
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">SALIR</button>
+            <button type="button" class="btn btn-dark">IR A PAGAR</button>
           </div>
         </div>
       </div>
-    </section>
-    <section class="container">
-      <h2 id="bombones" class="text-center">BOMBONES</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card" id="cardAlBo">
-            <img src="./img/bombones1-250x250.jpg" class="card-img-top" alt="Bombones Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Bombones Cubiertos de Chocolate Premiun</h5>
-              <p class="card-text">Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" id="cardAlBo">
-            <img src="./img/bombones2-250x250.jpg" class="card-img-top" alt="Bombones Artesanales de gran calidad">
-            <div class="card-body">
-              <h5 class="card-title">Bombones de Chocolate Negro</h5>
-              <p class="card-text">Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.</p>
-            </div>
-          </div>
-        </div>
-    </section>
-    <footer class="container">
+    </div>    
+    <footer class="container">    
       <h2 id="contacto" class="text-center">CONTACTO</h2>
       <div class="d-flex row margenRedes">                
         <ul class="nav nav-pills nav-fill justify-content-between">        
@@ -147,7 +88,7 @@
       </div>
       <br>
       <ul class="d-flex justify-content-end align-self-center">
-        <li><a href="./index.html" id="avion"><i class="fa-solid fa-plane-up"></i>UP!</li></a>
+        <li><a href="./prueba.html" id="avion"><i class="fa-solid fa-plane-up"></i>UP!</li></a>
       </ul>                                                                                          
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

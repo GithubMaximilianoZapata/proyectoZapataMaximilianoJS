@@ -1,6 +1,5 @@
 
-body {
-    /*background-color: pink;*/
+body {    
     background: rgb(246,152,171);
     background: radial-gradient(circle, rgba(246,152,171,1) 38%, rgba(207,135,193,0.835171568627451) 80%);
 }
@@ -39,6 +38,11 @@ p {
     font-size: 14px;
 }
 
+#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0, auto;      
+}
+
 section {
     margin-top: 45px;
     margin-bottom: 40px;
@@ -48,12 +52,13 @@ section {
     margin-top: 18px;
 }
 
-#cardTorta {
+.cardTorta {
     max-width: 300px;
     margin: 0 auto;
+       
 }
 
-#cardAlBo {
+.cardAlBo {
     max-width: 350px;
     margin: 0 auto;
 }
@@ -76,6 +81,60 @@ section {
   list-style: none;
 }
 
+.cuerpoCarrito {
+    background-color: black;
+    color: white
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+.modal-cuerpo-carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    font-size: 15px;   
+    margin: 10px;
+}
+
+.modal-cuerpo-carrito > p {
+    margin: 0 5%;
+}
+
+.modal-cuerpo-carrito > img {
+    height: 60px;
+    width: 60px;
+}
+
+.modal-cuerpo-carrito > h3 {
+    font-size: 15px;
+    margin: 0 10%;
+}
+.modal-cuerpo-carrito > input {
+    width: 50px;
+    background-color: black;
+    color: white;
+    margin: 0 3%;    
+}
+
+.delete-product {
+    cursor: pointer;
+    margin: 0 10%; 
+}
+
+.total-carrito {
+    font-size: 20px;
+    padding: 5px;    
+}
+
 @media screen and (max-width: 768px) {
 
     h1 {
@@ -96,8 +155,8 @@ section {
     
     p {
         font-size: 17px;
-    }
-
+    } 
+    
     .margenRedes {
         margin-left: 15px;
         padding-bottom: 10px;
@@ -107,4 +166,3 @@ section {
         font-size: 1.8rem;
     }
 }
-
