@@ -121,8 +121,7 @@ section {
 .modal-cuerpo-carrito > input {
     width: 50px;
     background-color: black;
-    color: white;
-    margin: 0 3%;    
+    color: white;    
 }
 
 .delete-product {
@@ -133,6 +132,18 @@ section {
 .total-carrito {
     font-size: 20px;
     padding: 5px;    
+}
+
+.contadorCarrito {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
 }
 
 @media screen and (max-width: 768px) {

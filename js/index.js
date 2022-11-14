@@ -1,10 +1,4 @@
-/// INICIALIZAR VARIABLES GLOBALES 
-let costoTotalCompra = 0;
-let flag;
-let total;
-let operacion;
-let opcion;
-let cantidad;
+
 // INSTANCIAR CLASE 
 class Delicatessen {
     constructor(id, img, nombre, descripcion, precio, cantidad) {
@@ -64,11 +58,10 @@ const prductosTorta = tortas.forEach((torta)=> {
             cantidad: torta.cantidad               
         });
         };  
-        pintarCarrito()                                  
+        pintarCarrito();
+        contarCarrito();                                  
     };
 });
-
-
 //CREAMOS EL GRUPO ALFAJORES  
 const seccAlfajores = document.getElementById("seccAlfajores");
 const prductosAlfajores = alfajores.forEach((alfajor)=> {
@@ -104,11 +97,10 @@ const prductosAlfajores = alfajores.forEach((alfajor)=> {
             cantidad: alfajor.cantidad               
         });
         };     
-        pintarCarrito()               
+        pintarCarrito();
+        contarCarrito();               
     };  
 });
-
-
 //CREAMOS EL GRUPO BOMBONES
 const seccBombones = document.getElementById("seccBombones");
 const prductosBombones = bombones.forEach((bombon)=> {
@@ -145,14 +137,14 @@ const prductosBombones = bombones.forEach((bombon)=> {
             cantidad: bombon.cantidad               
         });
         };
-
-        pintarCarrito()                         
+        pintarCarrito();
+        contarCarrito();                         
     };   
 });
-
 //CONSTRUCCION CARRITO EVENTOS CLICK
 const verCarrito = document.getElementById("ver-carrito");
 const modalCarrito = document.getElementById("modal-container");
+const contadorCarrito = document.getElementById("contadorCarrito");
 
 const pintarCarrito = () => {
     
@@ -164,7 +156,7 @@ const pintarCarrito = () => {
         <img src="${product.img}">
         <h3>${product.nombre}</h3>
         <p>$${product.precio}</p>
-        <input type="number" min = "1" value=${product.cantidad} id="cantidad${product.id}">                  
+        <input type="number" min = "1" value=${product.cantidad} id="cantidad${product.id}">Kg/unid.                  
         `       
          modalCarrito.append(carritoCont);
         
@@ -172,9 +164,9 @@ const pintarCarrito = () => {
         
         inputCantidad.onclick = ()=>{
             console.log(inputCantidad.value);
-            let objeto = carrito.find(item => item.id == product.id)
-            console.log(objeto);
-            objeto.cantidad = parseInt(inputCantidad.value)
+            let articulo = carrito.find(item => item.id == product.id)
+            console.log(articulo);
+            articulo.cantidad = parseInt(inputCantidad.value)
             actualizarCarrito()
         }
                             
@@ -187,7 +179,7 @@ const pintarCarrito = () => {
     });
     actualizarCarrito()
 };
-
+//FUNCIONES
 function actualizarCarrito(){
     let total = document.getElementById('total-carrito')
     total.innerText = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)
@@ -199,5 +191,11 @@ const eliminarArticulo = () => {
         return carritoId !== foundId        
     });
     pintarCarrito();
-    actualizarCarrito()
+    actualizarCarrito();
+    contarCarrito();
 };
+
+const contarCarrito = ()=> {
+    contadorCarrito.style.display ="block"
+    contadorCarrito.innerText = carrito.length;
+ }
