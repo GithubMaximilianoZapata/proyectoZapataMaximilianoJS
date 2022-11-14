@@ -21,7 +21,7 @@ miniAlfajorChocolatePremiun = new Delicatessen(7,  "./img/alfajores3-250x250.jpg
 const bombones = [bombonesChocolateNegro = new Delicatessen(8, "./img/bombones1-250x250.jpg", "Bombones de Chocolate Negro", "Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.", 80, 1),
 bombonesChocolatePremiun = new Delicatessen(9, "./img/bombones2-250x250.jpg", "Bombones de Chocolate Premiun", "Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.", 90, 1)];
 //CARRITO DE COMRPAS
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 //DOM PARA CREAR PRODUCTOS DINAMICAMENTE
 //CREAMOS EL GRUPO TORTAS
 const seccTortas = document.getElementById("seccTortas");
@@ -57,9 +57,10 @@ const prductosTorta = tortas.forEach((torta)=> {
             precio: torta.precio,
             cantidad: torta.cantidad               
         });
-        };  
+        };         
         pintarCarrito();
-        contarCarrito();                                  
+        contarCarrito();
+        guardaStorage();                                          
     };
 });
 //CREAMOS EL GRUPO ALFAJORES  
@@ -96,9 +97,10 @@ const prductosAlfajores = alfajores.forEach((alfajor)=> {
             precio: alfajor.precio,
             cantidad: alfajor.cantidad               
         });
-        };     
+        };             
         pintarCarrito();
-        contarCarrito();               
+        contarCarrito();
+        guardaStorage();                       
     };  
 });
 //CREAMOS EL GRUPO BOMBONES
@@ -136,9 +138,10 @@ const prductosBombones = bombones.forEach((bombon)=> {
             precio: bombon.precio,
             cantidad: bombon.cantidad               
         });
-        };
+        };       
         pintarCarrito();
-        contarCarrito();                         
+        contarCarrito(); 
+        guardaStorage();                                
     };   
 });
 //CONSTRUCCION CARRITO EVENTOS CLICK
@@ -146,9 +149,8 @@ const verCarrito = document.getElementById("ver-carrito");
 const modalCarrito = document.getElementById("modal-container");
 const contadorCarrito = document.getElementById("contadorCarrito");
 
-const pintarCarrito = () => {
-    
-    modalCarrito.innerHTML = ""
+const pintarCarrito = () => {    
+    modalCarrito.innerHTML = "";    
     carrito.forEach((product)=>{
         let carritoCont = document.createElement("div");
         carritoCont.className= "modal-cuerpo-carrito";
@@ -160,15 +162,14 @@ const pintarCarrito = () => {
         `       
          modalCarrito.append(carritoCont);
         
-        let inputCantidad = document.getElementById(`cantidad${product.id}`)
-        
+        let inputCantidad = document.getElementById(`cantidad${product.id}`);               
         inputCantidad.onclick = ()=>{
             console.log(inputCantidad.value);
             let articulo = carrito.find(item => item.id == product.id)
             console.log(articulo);
             articulo.cantidad = parseInt(inputCantidad.value)
-            actualizarCarrito()
-        }
+            actualizarCarrito();
+        };
                             
         let eliminaProducto = document.createElement("span");
         eliminaProducto.innerText = "❌";
@@ -176,26 +177,34 @@ const pintarCarrito = () => {
         carritoCont.append(eliminaProducto);
         eliminaProducto.onclick = eliminarArticulo;
                 
-    });
-    actualizarCarrito()
+    });          
+    actualizarCarrito();        
 };
 //FUNCIONES
 function actualizarCarrito(){
     let total = document.getElementById('total-carrito')
-    total.innerText = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)
-}
+    total.innerText = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);    
+};
 
 const eliminarArticulo = () => {
     const foundId = carrito.find((el)=>el.id);    
     carrito = carrito.filter((carritoId)=> {
         return carritoId !== foundId        
     });
+    guardaStorage();      
     pintarCarrito();
-    actualizarCarrito();
-    contarCarrito();
+    actualizarCarrito();        
+    contarCarrito();     
 };
-
+//LOCAL STORAGE
 const contarCarrito = ()=> {
     contadorCarrito.style.display ="block"
-    contadorCarrito.innerText = carrito.length;
- }
+    const carritoLenght = carrito.length;
+    localStorage.setItem("carritoLenght", JSON.stringify(carritoLenght));
+    contadorCarrito.innerText = JSON.parse(localStorage.getItem("carritoLenght"));
+ };
+ contarCarrito();
+
+const guardaStorage = () => localStorage.setItem("carrito", JSON.stringify(carrito));
+
+console.log(carrito);
