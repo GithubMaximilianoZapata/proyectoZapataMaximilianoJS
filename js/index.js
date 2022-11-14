@@ -22,6 +22,7 @@ const bombones = [bombonesChocolateNegro = new Delicatessen(8, "./img/bombones1-
 bombonesChocolatePremiun = new Delicatessen(9, "./img/bombones2-250x250.jpg", "Bombones de Chocolate Premiun", "Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.", 90, 1)];
 //CARRITO DE COMRPAS
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 //DOM PARA CREAR PRODUCTOS DINAMICAMENTE
 //CREAMOS EL GRUPO TORTAS
 const seccTortas = document.getElementById("seccTortas");
@@ -204,5 +205,6 @@ const contarCarrito = ()=> {
     contadorCarrito.innerText = JSON.parse(localStorage.getItem("carritoLenght"));
  };
  contarCarrito();
+ pintarCarrito();
 
 const guardaStorage = () => localStorage.setItem("carrito", JSON.stringify(carrito));
