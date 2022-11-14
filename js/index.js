@@ -206,5 +206,3 @@ const contarCarrito = ()=> {
  contarCarrito();
 
 const guardaStorage = () => localStorage.setItem("carrito", JSON.stringify(carrito));
-
-console.log(carrito);
