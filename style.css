@@ -176,4 +176,44 @@ section {
     #avion {        
         font-size: 1.8rem;
     }
+
+    .modal-cuerpo-carrito {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 65%;
+        height: 10%;
+        font-size: 10px;   
+        margin: 5px;
+    }
+    
+    .modal-cuerpo-carrito > p {
+        margin: 0 5%;
+    }
+    
+    .modal-cuerpo-carrito > img {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .modal-cuerpo-carrito > h3 {
+        font-size: 12px;
+        margin: 0 10%;
+    }
+    .modal-cuerpo-carrito > input {
+        width: 30px;
+        background-color: black;
+        color: white;    
+    }
+    
+    .delete-product {
+        cursor: pointer;
+        margin: 0 10%; 
+    }
+    
+    .total-carrito {
+        font-size: 16px;
+        padding: 3px;    
+    }
 }
