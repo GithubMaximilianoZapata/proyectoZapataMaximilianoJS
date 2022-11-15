@@ -18,7 +18,7 @@ const alfajores = [alfajorChocolateNegro = new Delicatessen(4, "./img/alfajores1
 miniAlfajorChocolateNegro = new Delicatessen(5, "./img/alfajores2-250x250.jpg","Mini Alfajor de Chocolate Negro", "Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.", 130, 1),
 alfajorChocolatePremiun = new Delicatessen(6, "./img/alfajores4-250x250.jpeg", "Alfajor de Chocolate Premiun", "Alfajores bañados en chocolate negro o blanco rellenos de dulce a eleccion." , 190, 1),
 miniAlfajorChocolatePremiun = new Delicatessen(7,  "./img/alfajores3-250x250.jpg", "Mini Alfajor de Chocolate Premiun", "Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.", 140, 1)];
-const bombones = [bombonesChocolateNegro = new Delicatessen(8, "./img/bombones1-250x250.jpg", "Bombones de Chocolate Negro", "Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.", 80, 1),
+const bombones = [bombonesChocolateNegro = new Delicatessen(8, "./img/bombones1-250x250.jpg", "Bombones de Chocolate", "Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.", 80, 1),
 bombonesChocolatePremiun = new Delicatessen(9, "./img/bombones2-250x250.jpg", "Bombones de Chocolate Premiun", "Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.", 90, 1)];
 //CARRITO DE COMRPAS
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -164,7 +164,7 @@ const pintarCarrito = () => {
          modalCarrito.append(carritoCont);
         
         let inputCantidad = document.getElementById(`cantidad${product.id}`);               
-        inputCantidad.onclick = ()=>{
+        inputCantidad.onchange = ()=>{
             console.log(inputCantidad.value);
             let articulo = carrito.find(item => item.id == product.id)
             console.log(articulo);
