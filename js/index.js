@@ -61,7 +61,15 @@ const prductosTorta = tortas.forEach((torta)=> {
         };         
         pintarCarrito();
         contarCarrito();
-        guardaStorage();                                          
+        guardaStorage();
+        Toastify({
+            text: "Agregado al Carrito",            
+            duration: 2000,
+            style: {
+                background: "rgb(63,94,251)",
+                background: "radial-gradient(circle, rgba(63,94,251,1) 4%, rgba(164,34,131,1) 85%)",                                
+              },            
+            }).showToast();                                          
     };
 });
 //CREAMOS EL GRUPO ALFAJORES  
@@ -101,7 +109,15 @@ const prductosAlfajores = alfajores.forEach((alfajor)=> {
         };             
         pintarCarrito();
         contarCarrito();
-        guardaStorage();                       
+        guardaStorage();
+        Toastify({
+            text: "Agregado al Carrito",            
+            duration: 2000,
+            style: {
+                background: "rgb(63,94,251)",
+                background: "radial-gradient(circle, rgba(63,94,251,1) 4%, rgba(164,34,131,1) 85%)",                                
+              },            
+            }).showToast();                             
     };  
 });
 //CREAMOS EL GRUPO BOMBONES
@@ -125,8 +141,8 @@ const prductosBombones = bombones.forEach((bombon)=> {
     contenido.append(cuerpo);
      //AGREGAR AL ARRAY CARRITO SIN REPETIR PRODUCTOS 
     const agregaBombones = document.getElementById(`${bombon.id}`);
-    agregaBombones.onclick = () => {
-       
+    agregaBombones.onclick = () => {   
+
         const repite = carrito.some((repiteProd)=>repiteProd.id === bombon.id);
         if (repite) {           
             let objeto = carrito.find(item => item.id == bombon.id)
@@ -142,13 +158,22 @@ const prductosBombones = bombones.forEach((bombon)=> {
         };       
         pintarCarrito();
         contarCarrito(); 
-        guardaStorage();                                
+        guardaStorage();
+        Toastify({
+            text: "Agregado al Carrito",            
+            duration: 2000,
+            style: {
+                background: "rgb(63,94,251)",
+                background: "radial-gradient(circle, rgba(63,94,251,1) 4%, rgba(164,34,131,1) 85%)",                                
+              },            
+            }).showToast();                                      
     };   
 });
 //CONSTRUCCION CARRITO EVENTOS CLICK
 const verCarrito = document.getElementById("ver-carrito");
 const modalCarrito = document.getElementById("modal-container");
 const contadorCarrito = document.getElementById("contadorCarrito");
+const cerrarCarrito = document.getElementById("cerrarCarrito");
 
 const pintarCarrito = () => {    
     modalCarrito.innerHTML = "";    
@@ -179,8 +204,16 @@ const pintarCarrito = () => {
         eliminaProducto.onclick = eliminarArticulo;
                 
     });          
-    actualizarCarrito();        
+    actualizarCarrito();
+    cerrarCarrito.onclick = ()=>{
+        Swal.fire(
+            'Cerraste tu Carrito',
+            'Quieres seguir comprando?',
+            'question'
+          )
+    };        
 };
+
 //FUNCIONES
 function actualizarCarrito(){
     let total = document.getElementById('total-carrito')
