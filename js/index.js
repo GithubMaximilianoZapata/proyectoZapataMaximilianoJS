@@ -20,6 +20,8 @@ alfajorChocolatePremiun = new Delicatessen(6, "./img/alfajores4-250x250.jpeg", "
 miniAlfajorChocolatePremiun = new Delicatessen(7,  "./img/alfajores3-250x250.jpg", "Mini Alfajor de Chocolate Premiun", "Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.", 140, 1)];
 const bombones = [bombonesChocolateNegro = new Delicatessen(8, "./img/bombones1-250x250.jpg", "Bombones de Chocolate", "Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.", 80, 1),
 bombonesChocolatePremiun = new Delicatessen(9, "./img/bombones2-250x250.jpg", "Bombones de Chocolate Premiun", "Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.", 90, 1)];
+//PRODCUTOS PARA ARMAR ARCHIVO JSON
+const productos = [tortas.concat(alfajores).concat(bombones)]; console.log(productos);
 //CARRITO DE COMRPAS
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
