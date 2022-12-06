@@ -1,0 +1,78 @@
+body {    
+    background: rgb(246,152,171);
+    background: radial-gradient(circle, rgba(246,152,171,1) 38%, rgba(207,135,193,0.835171568627451) 80%);
+}
+.nav {
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+}
+.contenedorPagos {    
+    width: 50%;
+    height: 70%;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    border: solid black;
+    border-radius: 10px;
+}
+.tarjeta {
+    margin-bottom: 20px;    
+}
+.inputNombre {
+    width: 350px;
+}
+.inputFecha {
+    width: 90px;
+    margin-right: 10px;
+}
+.inputCvv {
+    width: 80px;
+}
+.selTarj {
+    margin-right: 10px;
+}
+.borde {
+    border: solid black;
+    border-radius: 10px;
+}
+.borde1 {
+    border: solid black;
+    border-radius: 4px;
+}
+.total-compra {
+    color: black;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media screen and (max-width: 768px) {
+    
+    .contenedorPagos {    
+        width: 100%;
+        height: 100%;
+        margin-top: 80px;
+        margin-bottom: 60px;        
+    }
+    .tarjeta {
+        margin-bottom: 20px;    
+    }
+    .inputNombre {
+        width: 350px;
+    }
+    .inputFecha {
+        width: 90px;
+        margin-right: 10px;
+    }
+    .inputCvv {
+        width: 80px;
+    }
+    .selTarj {
+        margin-right: 10px;
+    }
+};
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+};

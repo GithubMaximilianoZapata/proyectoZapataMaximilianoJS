@@ -5,7 +5,8 @@
       "nombre": "Tortas para Eventos",
       "descripcion": "Esta es una torta cubierta por diferentes cremas para eventos de alta concurrencia.",
       "precio": 500,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Torta"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "nombre": "Tortas para Agasajo",
       "descripcion": "Esta es una torta cubierta con glace de azucar para eventos de mediana concurrencia.",
       "precio": 350,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Torta"
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "nombre": "Tortas para Postres",
       "descripcion": "Esta es una torta con diferentes coberturas y tamaños para eventos de baja concurrencia.",
       "precio": 250,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Torta"
     },
     {
       "id": 4,
@@ -29,7 +32,8 @@
       "nombre": "Alfajor Artesanal Chocolate Negro",
       "descripcion": "Alfajores cubiertos por choclate negro rellenos con dulce de leche.",
       "precio": 150,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Alfajor"
     },
     {
       "id": 5,
@@ -37,7 +41,8 @@
       "nombre": "Mini Alfajor de Chocolate Negro",
       "descripcion": "Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.",
       "precio": 130,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Alfajor"
     },
     {
       "id": 6,
@@ -45,7 +50,8 @@
       "nombre": "Alfajor de Chocolate Premiun",
       "descripcion": "Alfajores bañados en chocolate negro o blanco rellenos de dulce a eleccion.",
       "precio": 190,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Alfajor"
     },
     {
       "id": 7,
@@ -53,7 +59,8 @@
       "nombre": "Mini Alfajor de Chocolate Premiun",
       "descripcion": "Mini Alfajores cubirtos de chocolate negro rellenos con crema a eleccion.",
       "precio": 140,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Alfajor"
     },
     {
       "id": 8,
@@ -61,14 +68,16 @@
       "nombre": "Bombones de Chocolate",
       "descripcion": "Bombones bañados en chocolate negro o blanco con rellenos especiales a eleccion.",
       "precio": 80,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Bombon"
     },
     {
       "id": 9,
       "img": "./img/bombones2-250x250.jpg",
-      "nombre": "Bombones de Chocolate Premiun",
+      "nombre": "Bombones Premiun",
       "descripcion": "Bombones bañados en chocolate negro rellenos de dulce de leche o cremas a eleccion.",
       "precio": 90,
-      "cantidad": 1
+      "cantidad": 1,
+      "categoria": "Bombon"
     }
-  ]
+]  

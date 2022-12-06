@@ -1,4 +1,3 @@
-
 body {    
     background: rgb(246,152,171);
     background: radial-gradient(circle, rgba(246,152,171,1) 38%, rgba(207,135,193,0.835171568627451) 80%);
@@ -105,13 +104,16 @@ section {
     margin: 10px;
 }
 
-.modal-cuerpo-carrito > p {
-    margin: 0 5%;
+.modal-cuerpo-carrito > p {  
+    justify-content: center;
+    align-items: center;    
 }
 
 .modal-cuerpo-carrito > img {
     height: 60px;
     width: 60px;
+    justify-content: center;
+    align-items: center;  
 }
 
 .modal-cuerpo-carrito > h3 {
@@ -121,12 +123,19 @@ section {
 .modal-cuerpo-carrito > input {
     width: 50px;
     background-color: black;
-    color: white;    
+    color: white;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 15px;
+    margin-left: 7px; 
+    margin-right: 5px;  
 }
 
 .delete-product {
     cursor: pointer;
-    margin: 0 10%; 
+    padding-left: 7px;
+    justify-content: center;
+    align-items: center;  
 }
 
 .total-carrito {
@@ -145,7 +154,6 @@ section {
     position: absolute;
     display: none;
 }
-
 @media screen and (max-width: 768px) {
 
     h1 {
@@ -189,27 +197,37 @@ section {
     }
     
     .modal-cuerpo-carrito > p {
-        margin: 0 5%;
+        margin: 0 5%; 
+        justify-content: center;
+        align-items: center;         
     }
     
     .modal-cuerpo-carrito > img {
         height: 40px;
         width: 40px;
+        justify-content: center;
+        align-items: center;
     }
     
     .modal-cuerpo-carrito > h3 {
         font-size: 12px;
         margin: 0 10%;
+        justify-content: center;
+        align-items: center;
     }
     .modal-cuerpo-carrito > input {
         width: 35px;
         background-color: black;
-        color: white;    
+        color: white;
+        justify-content: center; 
+        align-items: center;   
     }
     
     .delete-product {
         cursor: pointer;
         margin: 0 10%; 
+        justify-content: center;
+        align-items: center;
     }
     
     .total-carrito {
